@@ -1,0 +1,561 @@
+/* Degrees and Programs */
+.catalog ul {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding: 0;
+  list-style-type: none;
+}
+
+.catalog ul li {
+  width: 50%;
+  padding-right: 1rem;
+}
+.searchBar,
+.viewControl,
+.yearControl {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.yearControl {
+  justify-content: space-between;
+}
+.yearControl > [type="button"] {
+  width: 23%;
+}
+.searchBar > input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 2;
+  border: 2px solid black;
+}
+.searchBar > [type="text"] {
+  padding: 0.3rem 2rem;
+  width: 50%;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+}
+.searchBar > [type="button"],
+#courseFilter > [type="button"],
+.viewControl > [type="button"],
+.yearControl > [type="button"] {
+  font-family: forza;
+  width: fit-content;
+  font-size: 1rem;
+  font-weight: 300;
+  padding: 0.3rem 2rem;
+  background-color: black;
+  color: #ffffff;
+  border: 2px solid #000000;
+	height: auto;
+}
+.yearControl > [type="button"]{
+  width: 20%;
+  padding: .3rem;
+}
+.yearControl > [type="button"]:active,.yearControl > [type="button"]:hover{
+  background-color: #ff4438;
+  border: 2px solid #ff4438;
+  color: #000000;
+}
+.searchBar > [type="button"]:hover, #courseFilter > [type="button"]:hover {
+  background-color: #ff4438;
+  border: 2px solid #ff4438;
+  color: #000000;
+}
+.searchBar i {
+  content: url(/assets/search.svg);
+  position: absolute;
+  pointer-events: none;
+}
+.catalog > [type="button"], .catalog > [type="text"], .catalog > select{
+  font-size: 1.1rem;
+  height: 3rem !important;
+}
+.icon {
+  padding: 10px;
+  max-width: 40px;
+  color: #ff4438;
+}
+
+.viewControl {
+  justify-content: flex-end;
+}
+.viewControl > [type="button"].active,
+.yearControl > [type="button"].active
+ {
+  background-color: #ff4438;
+  border: 2px solid #ff4438;
+  color: #000000;
+  pointer-events: none;
+}
+
+.viewControl > [type="button"]:hover {
+  background-color: #ffffff;
+  border: 2px solid #000000;
+  color: #000000;
+}
+.year-flow-control {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2rem 0;
+
+}
+.year-flow-control select {
+  padding: 0.3rem;
+  margin: 0;
+  margin-right: 1rem;
+  border: thin solid black;
+  display: inline-block;
+  padding: 0.5em 3.5em 0.5em 1em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.year-flow-control .classic {
+  background-image: linear-gradient(45deg, transparent 50%, white 50%),
+    linear-gradient(135deg, white 50%, transparent 50%),
+    linear-gradient(to right, black, black);
+  background-position: calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px), 100% 0;
+  background-size: 5px 5px, 5px 5px, 3rem ;
+  background-repeat: no-repeat;
+}
+
+.year-flow-control .classic:focus {
+  background-image: linear-gradient(45deg, white 50%, transparent 50%),
+    linear-gradient(135deg, transparent 50%, white 50%),
+    linear-gradient(to right, #ff4438, #ff4438);
+  background-position: calc(100% - 15px) 1em, calc(100% - 20px) 1em, 100% 0;
+  background-size: 5px 5px, 5px 5px, 3rem ;
+  background-repeat: no-repeat;
+  outline: 0;
+}
+
+.degreeRequirements #courseList{
+    max-height: 100vh;
+    overflow-y: auto;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+#catalog .course {
+  padding: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+#catalog .course:hover{
+  background-color: #f0f0f0;
+}
+#catalog .course p{
+  cursor: pointer;
+}
+/* 
+#catalog .course:nth-child(even) {
+  background-color: #e0e0e0;
+}
+#catalog .course:nth-child(odd) {
+  background-color: #f0f0f0;
+} */
+#catalog p {
+  margin: 0.5rem 0;
+}
+#catalog .content {
+  display: none;
+}
+#catalog .open > .content {
+  display: block;
+}
+.open {
+  height: auto;
+  transition: height 0.25s ease-in;
+}
+.gridView .header {
+  display: none;
+}
+.internal{
+  display: none;
+}
+
+#catalog p {
+  width: 100%;
+}
+
+.course, .course-header {
+  display: flex;
+  flex-wrap: wrap;
+}
+.course{
+  cursor: pointer;
+}
+.classtitle {
+  cursor: pointer;
+}
+.classtitle:hover {
+  color: #ff4438;
+}
+.course-header {
+    background-color: #ffffff;
+  font-weight: 900;
+  font-family: forza;
+  border-bottom: 3px solid #333;
+  position: sticky;
+  top: 3rem;
+  width: 100%;
+  padding: 0.5rem 1rem;
+}
+.gridView .course-header{
+  display: none;
+}
+#pagination {
+  margin-top: 1rem;
+}
+#pagination a{
+  margin-right: .5rem;
+  pointer-events: all;
+  cursor: pointer;
+}
+
+.course > p:nth-child(1),.course-header > p:nth-child(1) {
+  font-weight: 900;
+  width:60% !important;
+}
+.course > p:nth-child(2),.course-header > p:nth-child(2) {
+  text-align: center;
+  width: 30% !important;
+}
+.course > p:nth-child(3),.course-header > p:nth-child(3) {
+  text-align: center;
+  width: 15% !important;
+
+}
+
+.course > p:nth-child(4),.course-header > p:nth-child(4) {
+  text-align: center;
+  width: 10% !important;
+}
+
+.degreeRequirements .course > p:nth-child(1), .degreeRequirements .course-header > p:nth-child(1) {
+  font-weight: 900;
+  width:70% !important;
+}
+.degreeRequirements .course > p:nth-child(2), .degreeRequirements .course-header > p:nth-child(2) {
+  text-align: center;
+  width: 20% !important;
+}
+.degreeRequirements .course > p:nth-child(3), .degreeRequirements .course-header > p:nth-child(3) {
+  text-align: right;
+  width: 10% !important;
+
+}
+
+
+
+.header > p:nth-child(1)::before,
+.header > p:nth-child(2)::before {
+  content: url(sort.svg);
+  display: inline-block;
+  padding-right: 0.5rem;
+}
+.content {
+  width: 100%;
+  padding: 1rem 0;
+  display: none;
+}
+
+.notes ul {
+  font-style: italic;
+  list-style-type: none;
+  font-size: 0.9rem;
+}
+.notes ul li:before {
+  display: inline-block;
+  margin-left: -1rem;
+  content: "*";
+  color: #ff4438;
+  padding-right: 1rem;
+}
+.courselink {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  font-weight: 900;
+}
+.courselink:hover,
+.courselink:active {
+  color: #ff4438;
+}
+
+#courseFilter {
+  display: flex;
+  flex-direction: column;
+}
+#courseFilter div {
+  display: flex;
+  margin: 0.5rem 0;
+}
+#courseFilter input {
+  height: 20px;
+  width: 20px;
+  margin-right: 1rem;
+}
+#courseFilter label {
+  cursor: pointer;
+}
+
+#courseFilter input[type="checkbox"] {
+  display: grid;
+  place-content: center;
+  appearance: none;
+  background-color: #f0f0f0;
+  margin: 0;
+  margin-right: 1rem;
+  font: inherit;
+  color: currentColor;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 0.15em solid currentColor;
+  border-radius: 0.15em;
+  transform: translateY(-0.075em);
+  cursor: pointer;
+}
+
+#courseFilter input[type="checkbox"]::before {
+  content: "";
+  width: 1rem;
+  height: 1rem;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em #ff4438;
+  -webkit-transition: 120ms transform ease-in-out;
+  -moz-transition: 120ms transform ease-in-out;
+  -ms-transition: 120ms transform ease-in-out;
+  -o-transition: 120ms transform ease-in-out;
+}
+
+#courseFilter input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+
+/* Grid View */
+
+#electiveList{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+
+}
+.gridView #courseList{
+  display: flex;
+  flex-wrap: wrap;
+  }
+.gridView .course {
+  pointer-events: all;
+  cursor: pointer;
+  margin: 1rem 0;
+  padding: 1rem;
+  width: calc(33% - 1rem);
+  flex-direction: column;
+  margin-right: 1rem;
+}
+.gridView .course:hover .classtitle {
+  color: red;
+}
+
+.gridView .course > p:nth-child(1) {
+  font-weight: 900;
+  font-family: 'Forza';
+  font-size: 1rem;
+  min-height: 3rem;
+  margin-bottom: 1rem;
+  width: 100% !important;
+  border-bottom: 1px solid #000000;
+}
+.gridView .course > p:nth-child(2):before {
+  content: "Course #: ";
+  font-weight: 700;
+  display: inline-block;
+	margin-right: .5rem;
+}
+.gridView .course > p:nth-child(2) {
+  width: 100% !important;
+  text-align: left;
+}
+
+.course > p.courseTerm, .course-header > p.courseTerm{
+	display:none;
+	content: "Term:";
+}
+
+
+.gridView .course > p.courseCredit:before {
+  content: "Credits:";
+  font-weight: 700;
+  display: inline-block;margin-right:.5rem;
+}
+.gridView .course > p:nth-child(3) {
+  width: 100% !important;
+  text-align: left;
+}
+.gridView .course > p.courseCredit:before {
+  content: "Credits: ";
+  font-weight: 700;
+  display: inline-block;
+}
+.gridView .course > p:nth-child(4) {
+  width: 100% !important;
+  text-align: left;
+
+}
+.gridView p {
+  margin: 0 0 0.5rem 0;
+}
+#catalog.gridView .course.open .content {
+  display: none;
+}
+
+.modal-container {
+  top: 0;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+  display: none;
+}
+.modal-container.modal-open {
+  display: flex;
+}
+.modal .course {
+  max-width: 768px;
+  padding: .5rem 2rem !important;
+  background-color: #e0e0e0;
+	overflow:auto;
+	max-height:500px;
+}
+.modal .course-header{
+  padding: .5rem 2rem;
+}
+.modal .course .content {
+  display: block;
+}
+.gridView .course{
+  background-color: #f0f0f0;
+}
+
+.archived-catalog{
+    padding-left: 0;
+    column-count: 3;
+    list-style: none;
+}
+.hidden{
+  display: none;
+}
+.Main__sidebar .Button{
+  width: 100%;
+}
+@media screen and (max-width:768px) {
+  .viewControl{
+    display: none;
+  }
+  .Widget{
+    margin-block: 0rem;
+  }
+  h2{
+    margin-top: 2rem;
+  }
+  .year-flow-control{
+    margin-bottom: 0;
+  }
+
+  .course > p:nth-child(1),.course-header > p:nth-child(1) {
+    font-weight: 900;
+    width:60% !important;
+  }
+  .course > p:nth-child(2),.course-header > p:nth-child(2) {
+    text-align: center;
+    width: 40% !important;
+  }
+  .course > p:nth-child(3),.course-header > p:nth-child(3) {
+    text-align: center;
+    width: 40% !important;
+    display: none;
+  }
+  .course > p:nth-child(4),.course-header > p:nth-child(4) {
+    text-align: center;
+    width: 10% !important;
+    display: none;
+  }
+  .degreeRequirements .course > p:nth-child(1), .degreeRequirements .course-header > p:nth-child(1) {
+    font-weight: 900;
+    width:70% !important;
+  }
+  .degreeRequirements .course > p:nth-child(2), .degreeRequirements .course-header > p:nth-child(2) {
+    text-align: center;
+    width: 30% !important;
+  }
+  .degreeRequirements .course > p:nth-child(3), .degreeRequirements .course-header > p:nth-child(3) {
+    text-align: right;
+    width: 10% !important;
+  
+  }
+  .degreeRequirements .gridView .course > p:nth-child(1), .degreeRequirements .gridView .course-header > p:nth-child(1) {
+    font-weight: 900;
+    width:100% !important;
+  }
+  .degreeRequirements .gridView .course > p:nth-child(2), .degreeRequirements .gridView .course-header > p:nth-child(2) {
+    text-align: center;
+    width: 100% !important;
+  }
+  .degreeRequirements  .gridView.course > p:nth-child(3), .degreeRequirements .gridView .course-header > p:nth-child(3) {
+    text-align: right;
+    width: 100% !important;
+  
+  }
+
+  .gridView .course{
+    width: 49%;
+    margin: .5%;
+  }
+  
+  .gridView .course>p{
+    width: 100% !important;
+    margin: .5%;
+  }
+  .catalog ul li {
+    width: 100%;
+    padding: 0rem 1rem;
+  }
+  .yearControl > [type="button"]{
+    width: calc(50% - 1rem);
+    margin: .5rem;
+  }
+  .yearControl > [type="button"]:nth-child(1){
+    width: 100%;
+  }
+}

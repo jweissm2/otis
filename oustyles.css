@@ -1,0 +1,442 @@
+/*
+Implementation Skeleton v3 - 12/6/18
+Add styles to overwrite customer CSS, USE WITH CAUTION.
+*/
+
+/* match direct edit link to styling */
+a#de {
+	background: none !important;
+}
+
+/* a-to-z letters inline */
+ul.sitemap li{
+	display:inline;
+	margin-left:.7em;
+}
+
+
+ul.longlist{
+	column-count:2
+}
+@media screen and (max-width:768px){
+	ul.longlist{
+		column-count:1
+	}
+}
+
+/* Header Background Gradients */
+.Hero__background.no-gradient:after{
+	background-image: none !important;
+}
+.Hero__background.medium-gradient:after{
+	background-image: linear-gradient(transparent, var(--black-70)) !important;
+}
+.Hero__background.heavy-gradient:after{
+	background-image: linear-gradient(transparent, var(--black)) !important;
+}
+/* Image Styles */
+img.square-img{
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+.portrait-img-crop{
+	aspect-ratio: 2/3;
+	width:100%;
+	object-fit:cover;	    
+	margin-bottom: 1rem;
+}
+.classic-portrait-img-crop{
+	aspect-ratio: 28/31;
+	width:100%;
+	object-fit:cover;	    
+	margin-bottom: 1rem;
+}
+.landscape-img-crop{
+	aspect-ratio: 3/2;
+	width:100%;
+	object-fit:cover;    
+	margin-bottom: 1rem;
+}
+.Feed__grid img{
+	    display: block;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+/* Current Course Offerings
+*/
+label[for="program-select"] {
+    font-family: 'Forza';
+	padding-left: 1rem;
+}
+#program-select{
+	border: 0;
+    border-bottom: 1px solid var(--black);
+}
+.cco-table td, .cco-table th{
+	padding: 1rem;
+}
+.cco-table td:nth-child(1){
+		font-weight: 700;
+	}
+@media screen and (max-width:1080px){
+	.cco-table thead{
+		display:none;
+	}
+	.cco-table tbody{
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 2rem
+	}	
+	.cco-table tr{
+		display:grid;
+		background: unset !important;
+	}
+	.cco-table td{
+		padding: 0;
+	}
+	.cco-table td:before{
+		font-weight: 700;
+		padding-right: .5rem
+	}
+
+	.cco-table td:nth-child(2):before{
+		content: "Instructor:"
+	}
+	.cco-table td:nth-child(3):before{
+		content: "Format:"
+	}
+	.cco-table td:nth-child(4):before{
+		content: "Day:"
+	}
+	.cco-table td:nth-child(5):before{
+		content: "Start Date:"
+	}
+	.cco-table td:nth-child(6):before{
+		content: "Start Time:"
+	}
+	.cco-table td:nth-child(7):before{
+		content: "Audience:"
+	}
+}
+@media screen and (max-width:768px){
+		.cco-table tbody{
+			grid-template-columns:1fr;}
+
+}
+/*  ---------------- Inline Image Classes -------------------------------*/
+.float-right{
+	float: right;
+	padding-left:1rem;
+	padding-top: .5rem;
+	padding-bottom: .5rem;
+}
+.float-left{
+	float: left;
+	padding-right:1rem;
+	padding-top: .5rem;
+	padding-bottom: .5rem;
+}
+
+
+@media screen and (max-width:768px){
+	.float-left,.float-right{
+		width:100%;
+		padding:1rem;
+		float: normal;
+	}
+}
+
+/*  ---------------- Timeline Classes -------------------------------*/
+/* Timeline Container */
+.timeline {
+	margin: 20px auto;
+	padding: 20px;
+}
+
+/* Card container */
+.tl-card {
+	position: relative;
+	max-width: 100%;
+}
+
+/* setting padding based on even or odd */
+.tl-card:nth-child(odd) {
+	padding: 30px 0 30px 30px;
+}
+.tl-card:nth-child(even) {
+	padding: 30px 30px 30px 0;
+}
+/* Global ::before */
+.tl-card::before {
+	content: "";
+	position: absolute;
+	width: 50%;
+	border: solid var(--black);
+}
+
+/* Setting the border of top, bottom, left */
+.tl-card:nth-child(odd)::before {
+	left: 0px;
+	top: -4px;
+	bottom: -4px;
+	border-width: 4px 0 4px 4px;
+}
+
+/* Setting the top and bottom to "-5px" because earlier it was out of a pixel in mobile devices */
+@media only screen and (max-width: 400px) {
+	.tl-card:nth-child(odd)::before {
+		top: -5px;
+		bottom: -5px;
+	}
+}
+
+/* Setting the border of top, bottom, right */
+.tl-card:nth-child(even)::before {
+	right: 0;
+	top: 0;
+	bottom: 0;
+	border-width: 4px 4px 4px 0;
+}
+
+/* Removing the border if it is the first card */
+.tl-card:first-child::before {
+	border-top: 0;
+	border-top-left-radius: 0;
+}
+
+/* Removing the border if it is the last card  and it's odd */
+.tl-card:last-child:nth-child(odd)::before {
+	border-bottom: 0;
+	border-bottom-left-radius: 0;
+}
+
+/* Removing the border if it is the last card  and it's even */
+.tl-card:last-child:nth-child(even)::before {
+	border-bottom: 0;
+	border-bottom-right-radius: 0;
+}
+
+/* Information about the timeline */
+.tl-info {
+	display: flex;
+	flex-direction: column;
+	border-radius: 10px;
+	padding: 10px;
+}
+
+/* Title of the card */
+.tl-title {
+	color: var(--black);
+	position: relative;
+	font-family: 'Forza';
+	font-size: 1.5rem;
+}
+
+/* Timeline dot  */
+.tl-title::before {
+	content: "";
+	position: absolute;
+	width: 15px;
+	height: 15px;
+	background: white;
+	border-radius: 999px;
+	border: 4px solid var(--black);
+}
+
+/* text right if the card is even  */
+.tl-card:nth-child(even) > .tl-info > .tl-title {
+	text-align: right;
+}
+
+/* setting dot to the left if the card is odd */
+.tl-card:nth-child(odd) > .tl-info > .tl-title::before {
+	left: -45px;
+	top: 10px;
+}
+
+/* setting dot to the right if the card is odd */
+.tl-card:nth-child(even) > .tl-info > .tl-title::before {
+	right: -45px;
+	top: 10px;
+}
+
+
+.container{
+	    margin-block: calc(var(--space) / 2);
+    padding-inline: var(--container);
+}
+
+
+/*------------------ To be moved to primary CSS file --------------------*/
+
+h1,h2,h3,h4,h5,h6 {
+	margin-block: 1em 0.5em;}
+
+blockquote:not(.Quote__text) {
+    font-size: 1.5rem;
+    font-family: Forza, sans-serif;
+    font-weight: 700;
+}
+
+blockquote:not(.Quote__text)::before {
+    position: absolute;
+    content: "\201C";
+    font-size: 3rem;
+    margin-left: -2rem;
+    margin-top: -1rem;
+}
+
+
+.Split__image{
+	max-height: 600px;
+}
+.Hero__breadcrumbs{
+	text-transform: none;
+}
+
+/* Uniform sizing for News and Blog images. */
+.List--news .News img, .News__image{
+	aspect-ratio: 3/2;
+	width:100%;
+	object-fit:cover;	
+}
+
+/* Homepage News Images */
+.PostSlider__image{
+	aspect-ratio:2/3;
+}
+.PostSlider__image img{
+	height:100%;
+	object-fit: cover;
+	overflow:hidden;
+}
+
+
+/* Video in phone (overflow hidden) */
+.phone-image-frame-container{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+.phone-image-frame-container img{
+	height:100%;
+	z-index: 1000;
+	pointer-events: none;
+}
+.videobox {
+	position: absolute;
+	padding: 0 8%;
+	height: 100%;
+	padding-bottom: 10%;
+}
+
+.videobox > video {
+height: 100%;
+    background: black;
+}
+
+/* End Video in Phone */
+
+/* Multi-Image-Component */
+.multi-image-slider{
+    padding-inline: 0;
+}
+.multi-image-slider .Media__wrap:before{
+	background-image: none;
+}
+
+.multi-image-slider .Panel__item{
+	width:25vw;
+	min-width: 300px;
+}
+.multi-image-slider .Media__wrap, .multi-image-slider .Media--full, .multi-image-slider img{
+		    height: 100%;
+}
+.multi-image-slider img{
+    object-fit: cover;
+}
+
+.landscape .Panel__slider, .landscape .multi-image-slider .Panel__item{
+		overflow: hidden;
+}
+.square .Panel__slider, .square .multi-image-slider .Panel__item{
+	    aspect-ratio: 1;
+	overflow: hidden;
+}
+.square .Media img{
+	object-position: 0 200%;}
+.portrait .Panel__slider, .portrait .multi-image-slider .Panel__item{
+	    aspect-ratio: 2/3;
+	overflow: hidden;
+}
+.unset-ratio .Panel__slider, .unset-ratio .multi-image-slider .Panel__item{
+	aspect-ratio: unset !important;}
+
+.landscape .Media.Media--full,.landscape  .Media__wrap,.landscape  .Media__wrap img 
+.square .Media.Media--full,.square  .Media__wrap,.square  .Media__wrap img{
+height:100%;
+	width: 100%;
+	aspect-ratio: 3/2;
+}
+.landscape .Media img{
+	width: 100%;
+	height: 100%;
+}
+figcaption.Media__caption.gradient{
+	background: linear-gradient(0deg, rgba(0,0,0,.75) 20%, rgba(0,0,0,0) 100%);
+}
+
+/* Media Query Controllers*/
+@media screen and (max-width: 63.9375em){
+	.show-for-large {
+		display: none !important;
+	}
+}
+
+@media screen and (max-width: 39.9375em), screen and (min-width: 64em){
+	.show-for-medium-only {
+		display: none !important;
+	}
+}
+@media screen and (max-width: 0em), screen and (min-width: 40em){
+	.show-for-small-only {
+		display: none !important;
+	}
+}
+
+
+@media screen and (max-width:768px) {
+	.fw-img-xs{
+		width: 100% !important;
+		height: unset !important;
+		padding: 1rem 0 !important;
+	}
+}
+
+.Stats__value .small-numbers {
+	font: var(--h2);
+	margin-bottom: 1rem;
+}
+
+
+/* Certificate Styles */
+
+ul.cert-stream__body{
+column-count: 2	
+}
+.cert-summary > :first-child{
+	margin-top: 0;
+}
+
+@media screen and (max-width: 768px){
+	ul.cert-stream__body{
+column-count: 1
+}
+}
+
+.ou-auto-collapse-column-snippet img{
+	max-width:300px !important;
+}

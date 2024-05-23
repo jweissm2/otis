@@ -1,0 +1,74 @@
+/* ------------------widget styles------------------ */
+
+
+/* ------------------end-user styles------------------ */
+
+@container (width >= 38rem) {
+    .Columns--1-2 .Columns__grid, .Columns--2-1 .Columns__grid, .Columns--2 .Columns__grid, .Columns--4 .Columns__grid, .Columns--3 .Columns__grid {
+		margin-block: calc(var(--gutter) / 2);
+		gap: var(--space) calc(var(--gutter)/2);
+	}
+	.Columns:not(.theme-black):not(.Panel--gray):not(.Panel--red) {
+		margin-block:var(--space)
+	}
+
+    .Columns--1-2 .Columns__grid {
+      grid-template-columns: 1fr 2fr;
+    }
+	.Columns--2-1 .Columns__grid {
+      grid-template-columns: 2fr 1fr;
+    }
+	.Columns--3 .Columns__grid{
+	grid-template-columns: 1fr 1fr 1fr;
+	}
+	.Columns--4 .Columns__grid{
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	}
+
+  }
+
+
+.theme-black .RouterList__group{
+	border-left:0.125rem solid var(--white-10)
+}
+
+.auto-collapse-columns{
+	display: grid;
+	gap: calc(var(--gutter)/2)
+}
+.auto-collapse-columns.oc-2-columns{
+	grid-template-columns: repeat(2,1fr)
+}
+.auto-collapse-columns.oc-3-columns{
+	grid-template-columns: repeat(3,1fr)
+}
+@media screen and (max-width:768px) {
+	.auto-collapse-columns.oc-2-columns, .auto-collapse-columns.oc-3-columns{
+		grid-template-columns: repeat(1,1fr)
+	}
+}
+
+
+/* Mosaic Styles  */
+    .mosaic-grid {
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+      gap: 10px;
+    }
+
+   .mosaic-grid table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+   .mosaic-grid table td {
+      padding: 10px;
+      column-span: all;
+    }
+   .mosaic-grid table td img{
+min-height: 100%;
+    min-width: 100%;
+    margin: 0;
+    width: revert-layer;
+		   
+   }
+
